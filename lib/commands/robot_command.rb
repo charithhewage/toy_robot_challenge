@@ -8,9 +8,6 @@ module Commands
       @type = type
       @arguments = arguments
     end
-
-    def execute(robot, table)
-      raise Error.new("Base class #{self.class.name} should not be used directly")
-    end
+    
 	end
 end
