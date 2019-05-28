@@ -6,5 +6,5 @@ require_relative '../lib/application.rb'
 application = Application.new
 
 ARGF.each_line { |line| 
-  application.process(line.strip) 
+  application.process!(line.strip) 
 }

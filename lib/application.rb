@@ -14,7 +14,7 @@ class Application
     @input_parser 		= InputParser.new
   end
 
-  def process(line)
+  def process!(line)
     input_data = input_parser.parse(line)
     
     command = command_factory.build(input_parser.type, input_parser.arguments)
