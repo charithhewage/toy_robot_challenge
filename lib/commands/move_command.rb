@@ -5,13 +5,12 @@ module Commands
 	class MoveCommand < RobotCommand
 
 		def execute(robot, table)
-			
+			puts "called move"
 			direction = Directions::Direction.new(robot.x, robot.y, robot.direction)
-			new_direction = direction.move_forward
-			robot.update_position(new_direction.x, new_direction.y, new_direction.direction)
+			direction.move_forward
 			
-			#raise "Not Valid" unless table.valid_position?(arguments[0], arguments[1])
-      #robot.update_position(arguments)
+			robot.update_position(direction.x, direction.y, direction.direction)
+			
     end
 	end
 end

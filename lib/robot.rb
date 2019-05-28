@@ -13,6 +13,8 @@ class Robot
     @x = x || @x
     @y = y || @y
     @direction = direction || @direction
+
+    puts self.inspect
   end
 
   def placed?

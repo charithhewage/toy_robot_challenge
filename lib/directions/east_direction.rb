@@ -1,12 +1,18 @@
-module South
-  X_DISPLACEMENT = 0
-  Y_DISPLACEMENT = -1
+module Directions
+  module East
+    class << self
+      
+      def turn_left(x,y)
+        [x, y, "NORTH"]
+      end
 
-  def self.left
-    East
-  end
+      def turn_right(x,y)
+        [x, y, "SOUTH"]
+      end
 
-  def self.right
-    West
+      def move_forward(x,y)
+        [x+1, y, "EAST"]
+      end
+    end
   end
 end
