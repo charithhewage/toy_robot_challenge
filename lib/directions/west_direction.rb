@@ -3,11 +3,11 @@ module Directions
     class << self
       
       def turn_left(x,y)
-        [x, y, "NORTH"]
+        [x, y, "SOUTH"]
       end
 
       def turn_right(x,y)
-        [x, y, "SOUTH"]
+        [x, y, "NORTH"]
       end
 
       def move_forward(x,y)
