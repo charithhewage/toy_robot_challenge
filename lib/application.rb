@@ -9,6 +9,7 @@ class Application
   def initialize
     @robot = Robot.new
     @table = Table.new(5, 5)
+    
     @command_factory 	= CommandFactory.new
     @input_parser 		= InputParser.new
   end

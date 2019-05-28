@@ -3,6 +3,7 @@ require_relative "commands/move_command"
 require_relative "commands/turn_left_command"
 require_relative "commands/turn_right_command"
 require_relative "commands/report_command"
+require_relative "error"
 
 class CommandFactory
 
@@ -20,11 +21,7 @@ class CommandFactory
     if command_class
       command_class.new(type, arguments)
     else
-      #FIX-ME Change this
-      puts "Invalid Command Type: #{type.to_s}"
-      ## we can invert this dependency if we want to test it, etc.
-      #$stderr.puts "Invalid command given #{type.to_s.upcase}"
-      #NullRobotCommand.new(type: type, arguments: arguments)
+      raise Error.new("Invalid Command Type: #{type.to_s}")
     end
   end
 end
