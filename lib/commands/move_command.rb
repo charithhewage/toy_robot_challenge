@@ -5,7 +5,6 @@ module Commands
 	class MoveCommand < RobotCommand
 
 		def execute(robot, table)
-			puts "called move"
 			direction = Directions::Direction.new(robot.x, robot.y, robot.direction)
 			direction.move_forward
 			

@@ -9,12 +9,9 @@ class Robot
   end
 
   def update_position(x,y, direction)
-
     @x = x || @x
     @y = y || @y
     @direction = direction || @direction
-
-    puts self.inspect
   end
 
   def placed?

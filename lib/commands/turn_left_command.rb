@@ -5,7 +5,6 @@ module Commands
 	class TurnLeftCommand < RobotCommand
 
 		def execute(robot, table)
-			puts "called turn left"
 			direction = Directions::Direction.new(robot.x, robot.y, robot.direction)
 			direction.turn_left
 			

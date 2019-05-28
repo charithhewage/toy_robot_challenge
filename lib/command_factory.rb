@@ -3,7 +3,6 @@ require_relative "commands/move_command"
 require_relative "commands/turn_left_command"
 require_relative "commands/turn_right_command"
 require_relative "commands/report_command"
-require_relative "commands/null_command"
 
 class CommandFactory
 
