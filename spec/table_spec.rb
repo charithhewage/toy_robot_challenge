@@ -5,6 +5,13 @@ describe Table do
 
   let(:table)   { Table.new(5,5) }
 
+  describe "Default table" do
+  	it "should define a table" do
+  		expect(table.instance_variable_get(:@width)).to eq 5
+  		expect(table.instance_variable_get(:@height)).to eq 5
+    end
+  end
+
   describe "#valid_position?" do
     it "shold return true when x,y both are 0" do
       expect(table.valid_position?(0, 0)).to be_truthy
@@ -30,7 +37,7 @@ describe Table do
       expect(table.valid_position?(0, 6)).to be_falsy
     end
 
-    it 'should return true when x,y are within the table width and height' do
+    it "should return true when x,y are within the table width and height" do
       expect(table.valid_position?(4, 3)).to be_truthy
     end
   end
