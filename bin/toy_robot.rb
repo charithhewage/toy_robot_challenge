@@ -5,6 +5,15 @@ require_relative '../lib/application.rb'
 
 application = Application.new
 
-ARGF.each_line { |line| 
-  application.process!(line.strip) 
-}
+begin
+ 	ARGF.each_line { |line| 
+		application.process!(line.strip) 
+	}
+
+rescue  SystemExit, Interrupt
+  exit(1)
+  
+rescue Exception => e
+  puts e.message
+  retry
+end
