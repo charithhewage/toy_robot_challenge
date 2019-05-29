@@ -37,15 +37,25 @@ Any move that would cause the robot to fall must be ignored.
 
 ## How to run the Toy Robot
 
+### Clone the project
+```
+$ git clone git@github.com:charithhewage/toy_robot_challenge.git
+$ cd ~/toy_robot_challenge
+```
+
+
 ### Install gem dependencies
-`bundle install`
+```
+$ bundle install
+```
 
 ### Run unit & integration tests
-`bundle exec rspec`
+```
+$ bundle exec rspec
+```
 
 ### Run robot application
 ```
-$ cd ~/toyrobot
 $ ruby ./bin/toy_robot.rb [instructions.txt]
 ```
 with sample data files
