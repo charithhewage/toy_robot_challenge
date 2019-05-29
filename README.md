@@ -37,6 +37,14 @@ Any move that would cause the robot to fall must be ignored.
 
 ## How to run the Toy Robot
 
+This project is written in Ruby programing language. You can simply clone this project to your development computer and run with your own commands. I recommend, you should have installed Ruby 2.2.2 or higher version in your computer. If you have already installed Ruby in your computer, Use the following command to check the version.
+
+```
+$ ruby -v
+```
+
+If you don’t have installed Ruby in your computer, see [these instructions](https://www.ruby-lang.org/en/documentation/installation/) on ruby-lang.org
+
 ### Clone the project
 ```
 $ git clone git@github.com:charithhewage/toy_robot_challenge.git
