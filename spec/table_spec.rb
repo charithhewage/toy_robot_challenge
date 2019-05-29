@@ -6,9 +6,9 @@ describe Table do
   let(:table)   { Table.new(5,5) }
 
   describe "Default table" do
-  	it "should define a table" do
-  		expect(table.instance_variable_get(:@width)).to eq 5
-  		expect(table.instance_variable_get(:@height)).to eq 5
+    it "should define a table" do
+      expect(table.instance_variable_get(:@width)).to eq 5
+      expect(table.instance_variable_get(:@height)).to eq 5
     end
   end
 
