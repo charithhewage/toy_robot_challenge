@@ -1,8 +1,8 @@
 require_relative "../exception"
 
 module Commands
-	class RobotCommand
-		attr_reader :type, :arguments
+  class RobotCommand
+    attr_reader :type, :arguments
 
     def initialize(type, arguments)
       @type = type
@@ -11,8 +11,8 @@ module Commands
 
     private
     def unauthorized_before_placing_robot
-    	raise Exceptions::InvalidPlacementCommand.new("Robot must be placed. Use <PLACE X,Y,DIRECTION>")
+      raise Exceptions::InvalidPlacementCommand.new("Robot must be placed. Use <PLACE X,Y,DIRECTION>")
     end
     
-	end
+  end
 end

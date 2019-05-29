@@ -6,7 +6,7 @@ require "commands/report_command"
 require "directions/direction"
 
 describe Commands::ReportCommand do
-	
+  
   describe '#execute' do
     let(:table)   { Table.new }
     let(:robot)   { Robot.new }

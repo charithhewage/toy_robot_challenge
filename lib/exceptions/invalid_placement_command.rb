@@ -1,3 +1,3 @@
 module Exceptions
-	class InvalidPlacementCommand < ArgumentError; end
+  class InvalidPlacementCommand < ArgumentError; end
 end

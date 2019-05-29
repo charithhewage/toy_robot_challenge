@@ -6,10 +6,10 @@ require "commands/place_command"
 require "directions/direction"
 
 describe Commands::PlaceCommand do
-	let(:robot) { Robot.new }
-	let(:width) { 5 }
+  let(:robot) { Robot.new }
+  let(:width) { 5 }
   let(:height) { 5 }
-	let(:table) { Table.new(width, height) }
+  let(:table) { Table.new(width, height) }
 
   describe "#initialze" do
     it "should initialze type and arguments for correct commands" do
@@ -22,17 +22,17 @@ describe Commands::PlaceCommand do
 
   describe '#execute' do
 
-		it "should place the robot on the table for valid inputs" do
-			command = Commands::PlaceCommand.new("PLACE", [0,0,"NORTH"])
+    it "should place the robot on the table for valid inputs" do
+      command = Commands::PlaceCommand.new("PLACE", [0,0,"NORTH"])
 
-	    command.execute(robot, table)
+      command.execute(robot, table)
 
-	    expect(robot.x).to eq(0)
-	    expect(robot.y).to eq(0)
-	    expect(robot.direction).to eq("NORTH")
-	  end
+      expect(robot.x).to eq(0)
+      expect(robot.y).to eq(0)
+      expect(robot.direction).to eq("NORTH")
+    end
 
-	  it "should raise an error when placing the robot outside of the table" do
+    it "should raise an error when placing the robot outside of the table" do
       command = Commands::PlaceCommand.new("PLACE", [8,0,"NORTH"])
       expect(table).to receive(:valid_position?).with(8, 0).and_return(false)
 

@@ -1,3 +1,3 @@
 module Exceptions
-	class InvalidParameters < ArgumentError; end
+  class InvalidParameters < ArgumentError; end
 end

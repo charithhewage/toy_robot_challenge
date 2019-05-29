@@ -13,43 +13,43 @@ describe Commands::TurnRightCommand do
 
     context 'Robot valid placement' do
       context "When robot is facing to North" do
-      	it "should rotate the robot to east for turn right" do
-	        robot.update_position(0,0,"NORTH")
+        it "should rotate the robot to east for turn right" do
+          robot.update_position(0,0,"NORTH")
 
-	        command.execute(robot,table)
+          command.execute(robot,table)
 
-	        #Should not change robot location
-	        expect(robot.x).to eq(0)
-	        expect(robot.y).to eq(0)
-	        expect(robot.direction).to eq("EAST")
-	      end
+          #Should not change robot location
+          expect(robot.x).to eq(0)
+          expect(robot.y).to eq(0)
+          expect(robot.direction).to eq("EAST")
+        end
       end
 
       context "When robot is facing to East" do
-      	it "should rotate the robot to south for turn right" do
-	        robot.update_position(0,0,"EAST")
-	        command.execute(robot,table)
+        it "should rotate the robot to south for turn right" do
+          robot.update_position(0,0,"EAST")
+          command.execute(robot,table)
 
-	        expect(robot.direction).to eq("SOUTH")
-	      end
+          expect(robot.direction).to eq("SOUTH")
+        end
       end
 
       context "When robot is facing to South" do
-      	it "should rotate the robot to west for turn right" do
-	        robot.update_position(0,0,"SOUTH")
-	        command.execute(robot,table)
+        it "should rotate the robot to west for turn right" do
+          robot.update_position(0,0,"SOUTH")
+          command.execute(robot,table)
 
-	        expect(robot.direction).to eq("WEST")
-	      end
+          expect(robot.direction).to eq("WEST")
+        end
       end
 
       context "When robot is facing to West" do
-      	it "should rotate the robot to north for turn right" do
-	        robot.update_position(0,0,"WEST")
-	        command.execute(robot,table)
+        it "should rotate the robot to north for turn right" do
+          robot.update_position(0,0,"WEST")
+          command.execute(robot,table)
 
-	        expect(robot.direction).to eq("NORTH")
-	      end
+          expect(robot.direction).to eq("NORTH")
+        end
       end
     end
 

@@ -1,3 +1,3 @@
 module Exceptions
-	class CommandNotFound < NoMethodError; end
+  class CommandNotFound < NoMethodError; end
 end
