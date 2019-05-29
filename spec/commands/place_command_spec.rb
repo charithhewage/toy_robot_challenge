@@ -1,6 +1,7 @@
 require "spec_helper"
 require "robot"
 require "table"
+require "exception"
 require "commands/place_command"
 require "directions/direction"
 
@@ -20,6 +21,7 @@ describe Commands::PlaceCommand do
   end
 
   describe '#execute' do
+
 		it "should place the robot on the table for valid inputs" do
 			command = Commands::PlaceCommand.new("PLACE", [0,0,"NORTH"])
 
@@ -34,13 +36,17 @@ describe Commands::PlaceCommand do
       command = Commands::PlaceCommand.new("PLACE", [8,0,"NORTH"])
       expect(table).to receive(:valid_position?).with(8, 0).and_return(false)
 
-      expect { command.send(:execute, robot, table) }.to raise_error("Invalid Position")
+      expect(Exceptions::InvalidPlacementCommand).to receive(:new).and_return("Robot must be placed. Use <PLACE X,Y,DIRECTION>")
+
+      expect { command.send(:execute, robot, table) }.to raise_error "Robot must be placed. Use <PLACE X,Y,DIRECTION>"
     end
 
     it "should raise error when placing the robot with an invalid direction" do
       command = Commands::PlaceCommand.new("PLACE", [0,0,"INVALID_DIRECTION"])
 
-      expect { command.send(:execute, robot, table) }.to raise_error("Invalid Direction")
+      expect(Exceptions::InvalidParameters).to receive(:new).and_return("Invalid Parameters")
+
+      expect { command.send(:execute, robot, table) }.to raise_error("Invalid Parameters")
     end
   end
 end

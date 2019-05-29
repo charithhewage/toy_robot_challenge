@@ -51,12 +51,13 @@ describe Commands::TurnRightCommand do
 	        expect(robot.direction).to eq("NORTH")
 	      end
       end
-
     end
 
     context "Robot's invalid placement" do
       it "should raise an error when moving the robot without placement" do
-        expect { command.send(:execute, robot, table) }.to raise_error("Invalid Command")
+        expect(Exceptions::InvalidPlacementCommand).to receive(:new).and_return("Robot must be placed. Use <PLACE X,Y,DIRECTION>")
+        
+        expect { command.send(:execute, robot, table) }.to raise_error "Robot must be placed. Use <PLACE X,Y,DIRECTION>"
       end
     end
   end

@@ -5,7 +5,7 @@ module Commands
 	class TurnRightCommand < RobotCommand
 
 		def execute(robot, table)
-			raise Error.new("Invalid Command") unless robot.placed?
+			unauthorized_before_placing_robot unless robot.placed?
 			
 			direction = Directions::Direction.new(robot.x, robot.y, robot.direction)
 			direction.turn_right

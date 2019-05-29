@@ -1,8 +1,10 @@
 require "spec_helper"
 require "robot"
 require "table"
+require "exception"
 require "commands/move_command"
 require "directions/direction"
+
 
 describe Commands::MoveCommand do
   describe '#execute' do
@@ -23,9 +25,11 @@ describe Commands::MoveCommand do
 	      end
 
 	      it 'Should raise error when falling the robot from the table' do
+	      	expect(Exceptions::InvalidParameters).to receive(:new).and_return("Invalid Parameters (x,y)")
+
 	        robot.update_position(5,5,"NORTH")
 
-	        expect { command.send(:execute, robot, table) }.to raise_error("Invalid Position")
+	        expect { command.send(:execute, robot, table) }.to raise_error("Invalid Parameters (x,y)")
 	      end
       end
 
@@ -68,8 +72,11 @@ describe Commands::MoveCommand do
     end
 
     context "Robot's invalid placement" do
+
       it "should raise an error when moving the robot without placement" do
-        expect { command.send(:execute, robot, table) }.to raise_error("Invalid Command")
+      	expect(Exceptions::InvalidPlacementCommand).to receive(:new).and_return("Robot must be placed. Use <PLACE X,Y,DIRECTION>")
+
+        expect { command.send(:execute, robot, table) }.to raise_error "Robot must be placed. Use <PLACE X,Y,DIRECTION>"
       end
     end
   end

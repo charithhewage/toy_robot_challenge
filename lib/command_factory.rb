@@ -3,7 +3,7 @@ require_relative "commands/move_command"
 require_relative "commands/turn_left_command"
 require_relative "commands/turn_right_command"
 require_relative "commands/report_command"
-require_relative "error"
+require_relative "exception"
 
 class CommandFactory
 
@@ -21,7 +21,7 @@ class CommandFactory
     if command_class
       command_class.new(type, arguments)
     else
-      raise Error.new("Invalid Command Type: #{type.to_s}")
+      raise Exceptions::CommandNotFound.new("Command <#{type}> not found", type)
     end
   end
 end
