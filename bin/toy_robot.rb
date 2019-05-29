@@ -6,9 +6,9 @@ require_relative '../lib/application.rb'
 application = Application.new
 
 begin
- 	ARGF.each_line { |line| 
-		application.process!(line.strip) 
-	}
+  ARGF.each_line { |line| 
+    application.process!(line.strip) 
+  }
 
 rescue  SystemExit, Interrupt
   exit(1)
