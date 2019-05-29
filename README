@@ -35,7 +35,8 @@ The toy robot must not fall off the table during movement. This also includes th
 Any move that would cause the robot to fall must be ignored.
  
 
-##How to run
+##How to run the Toy Robot
+
 ###Install gem dependencies
 `bundle install`
 
@@ -50,7 +51,6 @@ with sample data files
 `ruby ./bin/toy_robot.rb ./bin/sample_data_1.txt`
 `ruby ./bin/toy_robot.rb ./bin/sample_data_2.txt`
 `ruby ./bin/toy_robot.rb ./bin/sample_data_3.txt`
-
 
 
 ## Example Input and Output
